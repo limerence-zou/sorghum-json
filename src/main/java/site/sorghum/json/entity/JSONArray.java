@@ -16,6 +16,17 @@ import java.util.Date;
 @SuppressWarnings({"AlibabaClassNamingShouldBeCamel", "AlibabaLowerCamelCaseVariableNaming"})
 public class JSONArray extends ArrayList<JSONObject> {
 
+    public JSONArray() {
+    }
+
+    public JSONArray(Object o) throws IOException {
+        JSONArray jsonArray = JsonUtils.toJsonArray(o);
+        this.addAll(jsonArray);
+    }
+    public JSONArray(String o) throws IOException {
+        JSONArray jsonArray = JsonUtils.toJsonArray(o);
+        this.addAll(jsonArray);
+    }
     public String getString(int index) {
         return TypeUtils.castToString(super.get(index));
     }

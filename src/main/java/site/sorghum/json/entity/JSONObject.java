@@ -13,8 +13,21 @@ import java.util.HashMap;
  * @Author: Sorghum 和 FastJson相关人员
  * @Date: 2021/3/25 15:23
  */
-@SuppressWarnings({"rawtypes", "AlibabaClassNamingShouldBeCamel", "unused", "AlibabaLowerCamelCaseVariableNaming"})
+@SuppressWarnings({"rawtypes", "AlibabaClassNamingShouldBeCamel", "unused", "AlibabaLowerCamelCaseVariableNaming", "unchecked"})
 public class JSONObject extends HashMap {
+    public JSONObject() {
+    }
+
+    public JSONObject(Object o) throws IOException {
+        JSONObject jsonObject = JsonUtils.toJsonObject(o);
+        this.putAll(jsonObject);
+    }
+
+    public JSONObject(String o) throws IOException {
+        JSONObject jsonObject = JsonUtils.toJsonObject(o);
+        this.putAll(jsonObject);
+    }
+
     public String getString(Object key) {
         return TypeUtils.castToString(this.get(key));
     }
@@ -44,10 +57,12 @@ public class JSONObject extends HashMap {
         Object v = this.get(key);
         return JsonUtils.toJsonObject(JsonUtils.toJsonString(v));
     }
+
     public JSONArray getJSONArray(Object key) throws IOException {
         Object v = this.get(key);
         return JsonUtils.toJsonArray(JsonUtils.toJsonString(v));
     }
+
     @SuppressWarnings("unchecked")
     public <T> T getObject(Object key, Class<T> valueType) {
         Object v = this.get(key);

@@ -33,6 +33,12 @@ public class JsonUtils {
     public static JSONObject toJsonObject(String json) throws IOException {
         return JsonUtils.toObject(json, JSONObject.class);
     }
+    public static JSONObject toJSONObject(Object json) throws IOException {
+        return JsonUtils.toObject(JsonUtils.toJsonString(json), JSONObject.class);
+    }
+    public static JSONObject toJSONObject(String json) throws IOException {
+        return JsonUtils.toObject(json, JSONObject.class);
+    }
     public static JSONObject toJsonObject(Object json) throws IOException {
         return JsonUtils.toObject(JsonUtils.toJsonString(json), JSONObject.class);
     }
@@ -40,6 +46,16 @@ public class JsonUtils {
         return JsonUtils.toObject(json, JSONArray.class);
     }
 
+    public static JSONArray toJsonArray(Object json) throws IOException {
+        return JsonUtils.toObject(JsonUtils.toJsonString(json), JSONArray.class);
+    }
+    public static JSONArray toJSONArray(String json) throws IOException {
+        return JsonUtils.toObject(json, JSONArray.class);
+    }
+
+    public static JSONArray toJSONArray(Object json) throws IOException {
+        return JsonUtils.toObject(JsonUtils.toJsonString(json), JSONArray.class);
+    }
     @SuppressWarnings("unchecked")
     public static <K, V> HashMap<K, V> toObject(String json) throws IOException {
         return JsonUtils.toObject(json, HashMap.class);
