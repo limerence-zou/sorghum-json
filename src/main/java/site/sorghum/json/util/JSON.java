@@ -10,19 +10,19 @@ import java.io.IOException;
 @SuppressWarnings({"unused", "AlibabaClassNamingShouldBeCamel"})
 @Component
 public class JSON extends JsonUtils {
-    public static JSONObject toJSON(Object json) throws IOException {
+    public static JSONObject toJSON(Object json){
         return JsonUtils.toJSONObject(json);
     }
 
-    public static JSONObject toJSON(String json) throws IOException {
+    public static JSONObject toJSON(String json){
         return JsonUtils.toJSONObject(json);
     }
 
-    public static Object parse(String json) throws IOException {
+    public static Object parse(String json){
         return JsonUtils.toObject(json);
     }
 
-    public static  <T> T toJavaObject(String json, Class<T> valueType) throws IOException {
+    public static  <T> T toJavaObject(String json, Class<T> valueType){
         return JsonUtils.toObject(json, valueType);
     }
 }

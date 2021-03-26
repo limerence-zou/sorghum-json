@@ -18,12 +18,12 @@ public class JSONObject extends HashMap {
     public JSONObject() {
     }
 
-    public JSONObject(Object o) throws IOException {
+    public JSONObject(Object o){
         JSONObject jsonObject = JsonUtils.toJsonObject(o);
         this.putAll(jsonObject);
     }
 
-    public JSONObject(String o) throws IOException {
+    public JSONObject(String o){
         JSONObject jsonObject = JsonUtils.toJsonObject(o);
         this.putAll(jsonObject);
     }
@@ -53,12 +53,12 @@ public class JSONObject extends HashMap {
         return TypeUtils.castToDate(value);
     }
 
-    public JSONObject getJSONObject(Object key) throws IOException {
+    public JSONObject getJSONObject(Object key){
         Object v = this.get(key);
         return JsonUtils.toJsonObject(JsonUtils.toJsonString(v));
     }
 
-    public JSONArray getJSONArray(Object key) throws IOException {
+    public JSONArray getJSONArray(Object key){
         Object v = this.get(key);
         return JsonUtils.toJsonArray(JsonUtils.toJsonString(v));
     }
@@ -69,7 +69,7 @@ public class JSONObject extends HashMap {
         return (T) v;
     }
 
-    public String toJSONString() throws JsonProcessingException {
+    public String toJSONString(){
         return JsonUtils.toJsonString(this);
     }
 }

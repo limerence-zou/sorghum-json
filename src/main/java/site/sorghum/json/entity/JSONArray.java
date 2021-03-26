@@ -19,11 +19,11 @@ public class JSONArray extends ArrayList<JSONObject> {
     public JSONArray() {
     }
 
-    public JSONArray(Object o) throws IOException {
+    public JSONArray(Object o){
         JSONArray jsonArray = JsonUtils.toJsonArray(o);
         this.addAll(jsonArray);
     }
-    public JSONArray(String o) throws IOException {
+    public JSONArray(String o){
         JSONArray jsonArray = JsonUtils.toJsonArray(o);
         this.addAll(jsonArray);
     }
@@ -52,11 +52,11 @@ public class JSONArray extends ArrayList<JSONObject> {
         return TypeUtils.castToDate(value);
     }
 
-    public JSONObject getJSONObject(int index) throws IOException {
+    public JSONObject getJSONObject(int index){
         Object v = super.get(index);
         return JsonUtils.toJsonObject(JsonUtils.toJsonString(v));
     }
-    public JSONArray getJSONArray(int index) throws IOException {
+    public JSONArray getJSONArray(int index){
         Object v = super.get(index);
         return JsonUtils.toJsonArray(JsonUtils.toJsonString(v));
     }
@@ -66,7 +66,7 @@ public class JSONArray extends ArrayList<JSONObject> {
         return (T) v;
     }
 
-    public String toJSONString() throws JsonProcessingException {
+    public String toJSONString(){
         return JsonUtils.toJsonString(this);
     }
 }
