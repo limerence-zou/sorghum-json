@@ -1,6 +1,7 @@
 package site.sorghum.json;
 
 import org.springframework.context.annotation.ComponentScan;
+import site.sorghum.json.util.JSON;
 
 /**
  * @Author: Sorghum
