@@ -13,7 +13,7 @@ import java.util.Date;
  * @Author: Sorghum
  * @Date: 2021/3/25 16:44
  */
-@SuppressWarnings("AlibabaClassNamingShouldBeCamel")
+@SuppressWarnings({"AlibabaClassNamingShouldBeCamel", "AlibabaLowerCamelCaseVariableNaming"})
 public class JSONArray extends ArrayList<JSONObject> {
 
     public String getString(int index) {
@@ -41,11 +41,11 @@ public class JSONArray extends ArrayList<JSONObject> {
         return TypeUtils.castToDate(value);
     }
 
-    public JSONObject getJsonObject(int index) throws IOException {
+    public JSONObject getJSONObject(int index) throws IOException {
         Object v = super.get(index);
         return JsonUtils.toJsonObject(JsonUtils.toJsonString(v));
     }
-    public JSONArray getJsonArray(int index) throws IOException {
+    public JSONArray getJSONArray(int index) throws IOException {
         Object v = super.get(index);
         return JsonUtils.toJsonArray(JsonUtils.toJsonString(v));
     }
@@ -55,7 +55,7 @@ public class JSONArray extends ArrayList<JSONObject> {
         return (T) v;
     }
 
-    public String toJsonString() throws JsonProcessingException {
+    public String toJSONString() throws JsonProcessingException {
         return JsonUtils.toJsonString(this);
     }
 }

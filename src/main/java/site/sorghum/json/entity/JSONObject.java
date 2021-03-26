@@ -13,7 +13,7 @@ import java.util.HashMap;
  * @Author: Sorghum 和 FastJson相关人员
  * @Date: 2021/3/25 15:23
  */
-@SuppressWarnings({"rawtypes", "AlibabaClassNamingShouldBeCamel"})
+@SuppressWarnings({"rawtypes", "AlibabaClassNamingShouldBeCamel", "unused", "AlibabaLowerCamelCaseVariableNaming"})
 public class JSONObject extends HashMap {
     public String getString(Object key) {
         return TypeUtils.castToString(this.get(key));
@@ -40,11 +40,11 @@ public class JSONObject extends HashMap {
         return TypeUtils.castToDate(value);
     }
 
-    public JSONObject getJsonObject(Object key) throws IOException {
+    public JSONObject getJSONObject(Object key) throws IOException {
         Object v = this.get(key);
         return JsonUtils.toJsonObject(JsonUtils.toJsonString(v));
     }
-    public JSONArray getJsonArray(Object key) throws IOException {
+    public JSONArray getJSONArray(Object key) throws IOException {
         Object v = this.get(key);
         return JsonUtils.toJsonArray(JsonUtils.toJsonString(v));
     }
@@ -54,7 +54,7 @@ public class JSONObject extends HashMap {
         return (T) v;
     }
 
-    public String toJsonString() throws JsonProcessingException {
+    public String toJSONString() throws JsonProcessingException {
         return JsonUtils.toJsonString(this);
     }
 }
