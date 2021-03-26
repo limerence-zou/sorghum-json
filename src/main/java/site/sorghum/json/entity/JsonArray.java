@@ -1,5 +1,6 @@
 package site.sorghum.json.entity;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import site.sorghum.json.util.JsonUtils;
 import site.sorghum.json.util.TypeUtils;
 
@@ -51,5 +52,9 @@ public class JsonArray extends ArrayList<JsonObject> {
     public <T> T getObject(int index, Class<T> valueType) {
         Object v = super.get(index);
         return (T) v;
+    }
+
+    public String toJsonString() throws JsonProcessingException {
+        return JsonUtils.toJsonString(this);
     }
 }

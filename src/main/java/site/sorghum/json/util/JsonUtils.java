@@ -31,11 +31,12 @@ public class JsonUtils {
     public static <T> T toObject(String json, Class<T> valueType) throws IOException {
         return objectMapper.readValue(json, valueType);
     }
-
     public static JsonObject toJsonObject(String json) throws IOException {
         return JsonUtils.toObject(json, JsonObject.class);
     }
-
+    public static JsonObject toJsonObject(Object json) throws IOException {
+        return JsonUtils.toObject(JsonUtils.toJsonString(json), JsonObject.class);
+    }
     public static JsonArray toJsonArray(String json) throws IOException {
         return JsonUtils.toObject(json, JsonArray.class);
     }
