@@ -13,7 +13,8 @@ import java.util.Date;
  * @Author: Sorghum
  * @Date: 2021/3/25 16:44
  */
-public class JsonArray extends ArrayList<JsonObject> {
+@SuppressWarnings("AlibabaClassNamingShouldBeCamel")
+public class JSONArray extends ArrayList<JSONObject> {
 
     public String getString(int index) {
         return TypeUtils.castToString(super.get(index));
@@ -35,16 +36,16 @@ public class JsonArray extends ArrayList<JsonObject> {
         return TypeUtils.castToBoolean(super.get(index));
     }
 
-    public Date getDate(int index) throws ParseException {
+    public Date getDate(int index){
         Object value = super.get(index);
         return TypeUtils.castToDate(value);
     }
 
-    public JsonObject getJsonObject(int index) throws IOException {
+    public JSONObject getJsonObject(int index) throws IOException {
         Object v = super.get(index);
         return JsonUtils.toJsonObject(JsonUtils.toJsonString(v));
     }
-    public JsonArray getJsonArray(int index) throws IOException {
+    public JSONArray getJsonArray(int index) throws IOException {
         Object v = super.get(index);
         return JsonUtils.toJsonArray(JsonUtils.toJsonString(v));
     }

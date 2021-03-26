@@ -4,11 +4,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import site.sorghum.json.entity.JsonArray;
-import site.sorghum.json.entity.JsonObject;
+import site.sorghum.json.entity.JSONArray;
+import site.sorghum.json.entity.JSONObject;
 
 
-import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -31,14 +30,14 @@ public class JsonUtils {
     public static <T> T toObject(String json, Class<T> valueType) throws IOException {
         return objectMapper.readValue(json, valueType);
     }
-    public static JsonObject toJsonObject(String json) throws IOException {
-        return JsonUtils.toObject(json, JsonObject.class);
+    public static JSONObject toJsonObject(String json) throws IOException {
+        return JsonUtils.toObject(json, JSONObject.class);
     }
-    public static JsonObject toJsonObject(Object json) throws IOException {
-        return JsonUtils.toObject(JsonUtils.toJsonString(json), JsonObject.class);
+    public static JSONObject toJsonObject(Object json) throws IOException {
+        return JsonUtils.toObject(JsonUtils.toJsonString(json), JSONObject.class);
     }
-    public static JsonArray toJsonArray(String json) throws IOException {
-        return JsonUtils.toObject(json, JsonArray.class);
+    public static JSONArray toJsonArray(String json) throws IOException {
+        return JsonUtils.toObject(json, JSONArray.class);
     }
 
     @SuppressWarnings("unchecked")
