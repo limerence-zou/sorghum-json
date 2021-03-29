@@ -69,4 +69,9 @@ public class JSONArray extends ArrayList<JSONObject> {
     public String toJSONString(){
         return JsonUtils.toJsonString(this);
     }
+
+    @Override
+    public String toString() {
+        return JsonUtils.toJsonString(this);
+    }
 }
