@@ -38,11 +38,12 @@ public class JSONArray extends ArrayList<JSONObject> {
     public long getLong(int index) {
         return TypeUtils.castToLong(super.get(index));
     }
-
+    public float getFloat(int index){
+        return TypeUtils.castToFloat(super.get(index));
+    }
     public double getDouble(int index) {
         return TypeUtils.castToDouble(super.get(index));
     }
-
     public boolean getBoolean(int index) {
         return TypeUtils.castToBoolean(super.get(index));
     }

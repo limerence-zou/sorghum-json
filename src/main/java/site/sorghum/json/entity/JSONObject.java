@@ -27,7 +27,9 @@ public class JSONObject extends HashMap {
         JSONObject jsonObject = JsonUtils.toJsonObject(o);
         this.putAll(jsonObject);
     }
-
+    public float getFloat(Object key){
+        return TypeUtils.castToFloat(this.get(key));
+    }
     public String getString(Object key) {
         return TypeUtils.castToString(this.get(key));
     }
